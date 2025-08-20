@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Bài 3</h1>
+<!-- Danh sách List -->
+ <!-- Có thứ tự ol, không thứ tự ul -->
+  <ol>
+    <li>Thức dậy</li>
+    <li>đi học</li>
+    <li>Giải lao</li>
+  </ol>
+<ul> 
+    <!-- Không thứ tự dùng thẻ ul bên trong là li -->
+    <li>Python</li>
+    <li>JavaCore</li>
+    <li>PHP</li>
+    <li>C#</li>
+</ul>
+
+<h1>Form</h1>
+<form action="">
+    <div>
+        <b>Họ Và Tên</b>
+        <input type="text" name="fullname" placeholder="nhap thong tin">
+    </div>
+     <div>
+        <b>Năm sinh</b>
+        <input type="text" name="Year" value="2025">
+        <!-- nếu muốn thông tin chỉ đọc ko điền được ta dùng thẻ readonly -->
+    </div>
+    <div>
+        <b>Giới thiệu chi tiết</b>
+        <textarea name="Giới thiệu" id="thông tin">hãy nhập vào</textarea>
+    </div>
+    <div>
+        <b>Nhập email</b>
+        <input type="email" name="mail" placeholder="Nhập mail của bạn">
+        <br>
+        <input type="submit">
+    </div>
+    <div>
+        <input type="tel" name="telephone" placeholder="Nhập vào số điện thoại" required pattern="([0]){1}([0, 3, 9]{1}([0-9]{3}([0-9]){4}))">
+        <!-- thẻ required bắt buộc phải nhật hết thông tin -->
+    </div>
+    <div>
+        <b>Giới tính</b><br>
+        <input type="radio"name = "gioitinh" value="Nam">Nam <br>
+        <input type="radio"name = "gioitinh" value="nu"> Nuw <br>
+        <input type="radio"name = "gioitinh" value="khongxacdinh"> khong xác định
+        <!-- thẻ radio cho phép ta chọn 1 type trong 1 khối -->
+    </div>
+    <div>
+        <b>Sở thích</b><br>
+        Game: <input type="checkbox" name="sothich" value="game">
+        music: <input type="checkbox" name="sothich" value="music">
+        Sport: <input type="checkbox" name="sothich" value="Sport">
+    </div>
+    <!-- List và data list -->
+     <div>
+        <b>Trình duyệt ưa thích</b>
+        <input list="browsers">
+        <datalist id = "browsers">
+            <option value="nternet Explorer"></option>
+            <option value="Chorme"></option>
+            <option value="Google"></option>
+        </datalist>
+     </div>
+     <div>
+       <MARQUee><b>Name</b></MARQUee> 
+        <select name="browsers" id="">
+           <option value="Dũng">Dũng</option>
+           <option value="Đạt đụt">Đạt</option>
+           <option value="Bộ đần">Bộ</option>
+        </select>
+        <br>
+        <input type="range" value="20"> 100
+     </div>
+     <div>
+        <b>Tuổi</b>
+        <input type="number" name="tuoi" placeholder="Nhập tuổi">
+        <input type="button" name="Bấm" value="xác nhận">
+     </div>
+      <!-- iframe cho phép ta nhúng 1 khung của video về trang -->
+       <iframe src="" frameborder="0"></iframe>
+       <!-- Thẻ Marquee cho phép ddooiso tượng chatj -->
+        <MARQuee>
+            <p>Chiếc lá cuối cùng</p>
+        </MARQuee>
+        <!-- thẻ video cho phép ta nhúng video vào trang web -->
+         <video src=""></video>
+         <!--thẻ audio cho phép ta chèn âm thanh vào máy  -->
+</form>
+</body>
+</html>
