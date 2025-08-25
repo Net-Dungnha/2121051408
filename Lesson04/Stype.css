@@ -1,0 +1,25 @@
+h3{
+    color: green;
+}
+#titel{
+    background-color: greenyellow;
+}
+.bg{
+    background-color: aquamarine;
+}
+.box1{
+    color: red;
+    background-color: aqua;
+    margin: 50px auto;
+}
+.box2{
+    color: green;
+    background-color: pink;
+    margin: 100 px;
+    margin: 50px;
+    /* Margin auto: căn ra giữa bạn hình */
+}
+.box3{
+   color: navy ;
+   background-color: blueviolet;
+}
