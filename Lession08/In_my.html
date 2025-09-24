@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+    // Thông tin đơn hàng
+    const madonhang = {
+        "madonhang": "DH001"
+    };
+
+    const thongtindonhang = {
+        "tenkhachhang": "Nguyen Van A",
+        "ngaydat": "2024-06-01",
+        "tongtien": 1500000
+    };
+
+    const danhsachsanpham = {
+        "cafe" : {
+            "masanpham" : "SP001",
+            "tensanpham" : "Cafe Trung Nguyen",
+            "soluong" : 2,
+            "giatien" : 200000
+        },
+        "machau" : {
+            "masanpham" : "SP002",
+            "tensanpham" : "Tra Sua Machau",
+            "soluong" : 1,
+            "giatien" : 150000
+        },
+        "trasua" : {
+            "masanpham" : "SP003",
+            "tensanpham" : "Tra Sua Tran Chau",
+            "soluong" : 3,
+            "giatien" : 300000
+        }
+    };
+
+    const trangthaithanhtoan = {
+        "trangthai": "Da thanh toan",
+        "phuongthucthanhtoan": "The tin dung"
+    };
+
+    const diachigiaohang = {
+        "diachi": "123 Le Loi, Quan 1, TP.HCM",
+        "sodienthoai": "0909123456"
+    };
+
+    // Tính tổng tiền
+    const billforit =
+        danhsachsanpham.cafe.giatien  * danhsachsanpham.cafe.soluong +
+        danhsachsanpham.machau.giatien* danhsachsanpham.machau.soluong +
+        danhsachsanpham.trasua.giatien* danhsachsanpham.trasua.soluong;
+
+    document.write("Tổng tiền đơn hàng là: " + billforit + "<br>");
+    document.write( "độ dài mã đơn hàng là" + madonhang.length + "<br>");
+
+   let name_tring = "HàVănDũng" + "<br>";
+    document.write("độ dài name_tring" + name_tring.length + "<br>");
+    document.write(name_tring.slice(1, 4) + "<br>");
+    document.write(name_tring.replace("Hà", "Nguyễn")+ "<br>");
+    document.write(name_tring.toUpperCase() + "<br>");
+    document.write(name_tring.toLowerCase() + "<br>");
+    document.write(name_tring.indexOf("Văn") + "<br>");
+    // indexOf trả về vị trí của chuỗi con trong chuỗi chính, nếu không tìm thấy trả về -1
+    document.write(name_tring.includes("Hà") + "<br>");
+    // includes trả về true nếu chuỗi con tồn tại trong chuỗi chính, ngược lại trả về false
+    document.write(name_tring.split(" ") + "<br>");
+    // split tách chuỗi thành mảng con dựa trên ký tự phân tách
+    document.write(name_tring.charAt(0) + "<br>");
+    // charAt trả về ký tự tại vị trí chỉ định trong chuỗi
+     
+     let the_array = ["An", "Hà", "Dũng", "Bình"];
+        document.write(the_array[2].startsWith("D") + "<br>");
+        // startsWith trả về true nếu chuỗi bắt đầu bằng chuỗi con chỉ định,
+        // chuyển từ chuỗi sang số
+    
+    let pi = Mạth.PI;
+    pi = pi.toFixed(2);
+    document.write(pi + "<br>");
+    // dùng isNaN để kiểm tra xem một giá trị có phải là số hay không
+
+    /// đối tượng ngày giờ
+    let today = new Date();
+    document.write(today + "<br>");
+    
+</script>
+</body>
+</html>
+
