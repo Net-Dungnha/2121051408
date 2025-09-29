@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let last_date = new Date();
+        // document.write("Hôm nay là ngày: " + (last_date.getDate() - 1) + "/" + (last_date.getMonth() + 1) + "/" + last_date.getFullYear());
+        // khai báo mảng
+        let my_array = ["Hà Văn Dũng", 20, "Hà Nội", "Dũng nha"];
+        document.write(length.my_array + "<br>");
+        document.write(my_array[0] + "<br>");
+        // trả về vị trí của phần tử trong mảng
+        document.write(my_array.indexOf("Hà Nội") + "<br>");
+        // kiểm tra có phải là mảng ko
+        document.write(Array.isArray(my_array) + "<br>");
+        // thêm phần tử vào cuối mảng
+        // dùng push
+        let a, b, c, d;
+        b = "javaScript";
+        a = new Array(1, 2, 3);
+        c = [ 42, "VBScript"];
+        document.write(a.concat(b, c));
+        // nối mảng ta dùng concat
+        document.write(a.join("-") + b.join("-") + "<br>");
+        e = my_array.push(2002)
+        document.write(e + "<br>");
+        // reverse đảo ngược mảng
+        document.write(my_array.reverse() + "<br>");
+        // sort sắp xếp mảng
+        document.write(my_array.sort() + "<br>");   
+        // xóa phần tử cuối mảng
+        d = my_array.pop();
+        document.write(d + "<br>");
+        document.write(my_array + "<br>");
+        // xóa phần tử đầu mảng
+        d = my_array.shift();
+        document.write(d + "<br>");
+        document.write(my_array + "<br>");
+        // thêm phần tử vào đầu mảng
+        d = my_array.unshift("Hà Văn Dũng");
+        document.write(d + "<br>");
+        document.write(my_array + "<br>");
+        // thay thế
+        b[0] = "HTML";
+        document.write(b + "<br>");
+        document.write(my_array + "<br>"); 
+        // biến if else
+        let new_day = new Date(); 
+        if (new_day.getHours() < 10) {
+            document.write("Good monninng" + "<br>");
+        } else if (new_day.getHours >= 10 && new_day.getHours() < 12) {
+            document.write("Chào buổi trưa" + "<br>");
+        } else if (new_day.getHours() >= 12 && new_day.getHours() < 17) {
+            document.write("Chào buổi chiều" + "<br>");
+        }
+        else {
+            document.write("Chào buổi tối" + "<br>");
+        }
+
+    </script>
+</body>
+</html>
