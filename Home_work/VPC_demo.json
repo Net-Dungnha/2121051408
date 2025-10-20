@@ -1,0 +1,58 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Create CPC and 1 subnet public and 1 subnet private",
+    "Resources": {
+        "ThisVPC": {
+            "Type": "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/16",
+                "EnableDnsSupport": "true",
+                "EnableDnsHostnames": "true",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "ThisVPC"
+                    }
+                ]
+            }
+
+        },
+        "ThisPublicSubnet": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "ThisVPC"
+                },
+                "CidrBlock": "10.1.0.0/24"
+            }
+        },
+        "ThisPrivateSubnet": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "VpcId": {
+                    "Ref": "ThisVPC"
+                },
+                "CidrBlock": "10.2.0.0/24"
+            }
+        },
+        "ThisSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Allow SSH and HTTP access",
+                "VpcId": {
+                    "Ref": "ThisVPC"
+                },
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0.0.0/0"
+                    }
+                ]
+            }
+        }            
+                
+
+    }
+}
