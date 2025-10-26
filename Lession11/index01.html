@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Tính điểm</h2>
+   <div>
+     <input type="number" placeholder="Nhập điểm A" id = pointA>
+   </div>
+   <div>
+    <input type="number" placeholder="Nhập điểm B" id = pointB>
+   </div>
+    <div>
+      <input type="number" placeholder="Nhập điểm C" id = pointC>
+    </div>
+    <div>
+      <button onclick="calculate()">Tính điểm</button>
+    </div>
+    <div>
+      kết quả : <input type="number" id="result">
+    </div>
+    <script>
+      function calculate(a, b, c){
+        if (a < 0 || a >= 10 || b < 0 || b >= 10 || c < 0 || c >= 10){
+            return "Vui lòng nhập điểm từ 0 đến 10 !"
+        }
+        if (isNaN(a) || isNaN(b) || isNaN(c)){
+          return "Vui lòng nhập vào số !"
+        } 
+        else {
+          return ((a * 0.6) + (b * 0.3) + (c * 0.1));
+        }        
+    } 
+      document.querySelector("button").onclick = function(){
+        let a = parseFloat(document.getElementById("pointA").value);
+        let b = parseFloat(document.getElementById("pointB").value);
+        let c = parseFloat(document.getElementById("pointC").value);
+        let result = calculate(a, b, c);
+        document.getElementById("result").value = result;
+      }
+    </script>
+  
+   <!-- <script>
+    sum = 0;
+    function point(a, b, c){
+    //     return ((a * 0.6) + (b * 0.3) + (c * 0.1));
+      if (a > 10 && a < 0 || b > 10 && b < 0 || c > 10 && c < 0){
+        return "Điểm không hợp lệ, vui lòng nhập lại !";
+      } 
+      if (Number.isNaN(a) || Number.isNaN(b) || Number.isNaN(c)){
+        return "Vui lòng nhập vào số !";
+      }
+      else {
+        return ((a * 0.6) + (b * 0.3) + (c * 0.1));
+      }
+        
+     }
+    let a = prompt("Nhập vào điểm A :");
+    let b = prompt("Nhập vào điểm B :");
+    let c = prompt("Nhập vào điểm C :");
+    document.write("Điểm của bạn là: " + point(sum = Number(a), sum = Number(b), sum = Number(c)));
+   </script>  -->
+</body>
+</html>
