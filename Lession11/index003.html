@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng tính điểm học kỳ</title>
+</head>
+<body>
+  <h2>Bảng tính điểm học kỳ</h2>
+
+  <div>
+    <input type="number" placeholder="Nhập điểm Toán" id="mathPoint">
+  </div>
+  <div>
+    <input type="number" placeholder="Nhập điểm Lý" id="physicsPoint">
+  </div>
+  <div>
+    <input type="number" placeholder="Nhập điểm Hóa" id="chemistryPoint">
+  </div>
+  <div>
+    <button onclick="handleCalculate()">Tính điểm học kỳ</button>
+  </div>
+  <div>
+    Kết quả: <input type="text" id="finalResult" readonly>
+  </div>
+
+  <script>
+    function calculate(a, b, c) {
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        return "Vui lòng nhập vào số!";
+      }
+      if (a < 0 || a > 10 || b < 0 || b > 10 || c < 0 || c > 10) {
+        return "Vui lòng nhập điểm từ 0 đến 10!";
+      }
+      return (a * 0.6) + (b * 0.3) + (c * 0.1);
+    }
+
+    function classifyScore(score) {
+      if (typeof score !== "number") return score; 
+      if (score >= 8) return "Giỏi";
+      if (score >= 6.5) return "Khá";
+      if (score >= 5) return "Trung bình";
+      return "Yếu";
+    }
+
+    function handleCalculate() {
+      const a = parseFloat(document.getElementById("mathPoint").value);
+      const b = parseFloat(document.getElementById("physicsPoint").value);
+      const c = parseFloat(document.getElementById("chemistryPoint").value);
+
+      const result = calculate(a, b, c);
+      document.getElementById("finalResult").value = classifyScore(result);
+    }
+  </script>
+</body>
+</html>

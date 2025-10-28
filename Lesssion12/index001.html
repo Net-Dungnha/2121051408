@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ví dụ về đổi chế độ</h2>
+    <div class="img">
+       <img src="img_001/img02.jpg" alt="">
+    </div>
+    <h2>Chế độ sáng</h2>
+    <div>
+        <button onclick="changeMode()">Đổi chế độ</button>
+    </div>
+    <script>
+        let Mode = true;
+        function changeMode(){
+           if (Mode == true){
+             document.getElementsByTagName("body")[0].style.background = "black";
+            document.getElementsByTagName("h2")[1].innerHTML = "chế độ tối";
+            document.getElementsByTagName("h2")[0].style.color = "white"
+            document.getElementsByTagName("h2")[1].style.color = "White"
+            document.getElementsByTagName("img")[0].src = "img_001/img_01.jpg"
+            Mode = false;
+           } else{
+             document.getElementsByTagName("body")[0].style.background = "white";
+            document.getElementsByTagName("h2")[1].innerHTML = "chế độ sáng";
+            document.getElementsByTagName("h2")[0].style.color = "black"
+            document.getElementsByTagName("h2")[1].style.color = "black"
+            document.getElementsByTagName("img")[0].src = "img_001/img02.jpg"
+            Mode = true;
+           }
+        }
+    </script>
+</body>
+</html>

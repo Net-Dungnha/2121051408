@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Xác định Tam giác vuông bằng conditionCheck_Pytago</h1>
+    <div>
+        <input type="number" placeholder="Nhập cạnh a" id="canhA">
+    </div>
+    <div>
+        <input type="number" placeholder="Nhập cạnh b" id="canhB">
+    </div>
+    <div>
+        <input type="number" placeholder="Nhập cạnh c" id="canhC">
+    </div>
+    <div>
+        <button onclick="handCalculate()">Kiểm tra tam giác vuông</button>
+    </div>
+    <div>
+        Kết quả: <input type="text" id="pytagoResult" readonly>
+
+</body>
+<script>
+    function conditionCheck(a, b, c){
+        let isValid = true;
+        if (a < 0 || b < 0 || c < 0){
+            document.writeln("Nhập vào chiều dài phù hợp")
+            return false;
+        }
+        if (isNaN(a) || isNaN(b) || isNaN(c)){
+            document.writeln("Vui lòng nhập vào số")
+            return false;
+        }
+        else {
+            return isValid;
+        }
+    }
+    function conditionCheck_Pytago(a, b , c){
+        if (typeof a !== "number") return  a;
+        if (typeof b !== "number") return  b;
+        if (typeof c !== "number") return  c;
+        if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a){
+            return "Đây là tam giác vuông";
+        }
+        else {
+            return "Đây không phải là tam giác vuông";
+        }
+    }
+    function handCalculate(){
+        const a = parseFloat(document.getElementById("canhA").value)
+        const b = parseFloat(document.getElementById("canhB").value)
+        const c = parseFloat(document.getElementById("canhC").value)
+        const ressult = conditionCheck(a, b, c);
+         if (ressult == true){
+           document.getElementById("pytagoResult").value = conditionCheck_Pytago(a, b, c);
+         }
+    }
+
+</script>
+</html>

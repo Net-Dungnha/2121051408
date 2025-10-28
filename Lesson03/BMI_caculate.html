@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Bảng tính chỉ số BMI
+    </h2>
+    <div>
+        <input type="number" placeholder="Nhập chiều cao (m)" id="height">
+    </div>
+    <div>
+        <input type="number" placeholder="Nhập cân nặng (kg)" id="weight">
+    </div>
+    <div>
+        <button onclick="handleCalculate()">Tính chỉ số BMI</button>
+    </div>
+    <div>
+        Kết quả: <input type="text" id="bmiResult" readonly>
+    </div>
+    <script>
+        function calculateBMI(height, weight) {
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                return "Vui lòng nhập chiều cao và cân nặng hợp lệ!";
+            }
+            return weight / (height * height);
+        }
+
+        function classifyBMI(bmi) {
+            if (typeof bmi !== "number") return bmi; 
+            if (bmi < 18.5) return "Thiếu cân";
+            if (bmi < 24.9) return "Bình thường";
+            if (bmi < 29.9) return "Thừa cân";
+            return "Béo phì";
+        }
+
+        function handleCalculate() {
+            const height = parseFloat(document.getElementById("height").value);
+            const weight = parseFloat(document.getElementById("weight").value);
+
+            const bmi = calculateBMI(height, weight);
+            document.getElementById("bmiResult").value = classifyBMI(bmi);
+        }
+    </script>
+    </body>
+</html>
